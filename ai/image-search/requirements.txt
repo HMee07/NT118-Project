@@ -1,0 +1,17 @@
+# Vector DB
+chromadb>=0.4.22
+
+# Model local (CLIP)
+transformers>=4.38.0
+torch
+torchvision
+
+# Image + utils
+pillow
+requests
+python-dotenv
+
+# (tuỳ chọn) làm API service
+fastapi
+uvicorn
+python-multipart
