@@ -21,11 +21,13 @@ import orderStatusRoutes from './routes/orderStatusRoutes.js'
 import chatRoute from './routes/chatRoutes.js'
 import assistantRoutes from './routes/assistantRoutes.js'
 // import rateLimiter from "./middleware/rateLimiter.js";
+import imageSearchRoutes from "./routes/imageSearchRoutes.js";
 
 dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
+
 
 // Create Socket.io instance
 const io = new Server(server, {
@@ -87,6 +89,8 @@ app.use('/api/wallet_transaction', walletTransactionRoutes);
 app.use('/api/order_status', orderStatusRoutes);
 app.use('/api/chat', chatRoute);
 app.use('/api/assistant', assistantRoutes);
+app.use("/api/image-search", imageSearchRoutes);
+
 
 // Initialize database with retry logic
 initDB().catch((error) => {
